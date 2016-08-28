@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrysus Web UI Prototype</title>
+</head>
+<body>
+
+<table border="1"><caption>Redis Connection Parameters</caption>
+    <tbody>
+    <tr>
+        <td>Redis HOST</td>
+        <td>Redis PORT</td>
+        <td>Redis PASS</td>
+        <td>Redis CHAN</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" name="CHRYSUS_REDISHOST" value="RedisIPAddressHere">
+        </td>
+        <td>
+            <input type="text" name="CHRYSUS_REDISPORT" value="6379">
+        </td>
+        <td>
+            <input type="text" name="CHRYSUS_REDISPASS" value="RedisPasswordHere">
+        </td>
+        <td>
+            <input type="text" name="CHRYSUS_REDISCHAN" value="incoming">
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+<table border="0"><caption>Redis publish JSON message</caption>
+    <tbody>
+    <tr>
+        <td style="background-color: #cbdcff;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #cbdcff;">"message":</td>
+        <td style="background-color: #cbdcff;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">"tasks":</td>
+        <td style="background-color: #ffcf1e;">[</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: yellow;">"task":</td>
+        <td style="background-color: yellow;"><select name="task">
+            <option value="mtr">"mtr"</option>
+            <option value="ping">"ping"</option>
+            <option value="traceroute">"traceroute"</option>
+        </select></td>
+        <td style="background-color: yellow;">,</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+        <td style="background-color: yellow;"><button type="button" onclick="alert('Clicking this should delete the task')">del task</button></td>
+        <td style="background-color: yellow;"><button type="button" onclick="alert('Clicking this should add a task')">add task</button></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: yellow;">"target":</td>
+        <td style="background-color: yellow;">
+            <input type="text" name="target" value="8.8.8.8">
+        </td>
+        <td style="background-color: yellow;">,</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">"outputs":</td>
+        <td style="background-color: #0ecc1b;">[</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"output":</td>
+        <td style="background-color: lawngreen;"><select name="output">
+            <option value="slack">"slack"</option>
+            <option value="smtp">"smtp"</option>
+        </select></td>
+        <td style="background-color: lawngreen;">,</td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should delete the output')">del output</button></td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should add an output')">add output</button></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;"></td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"botKey":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="botKey" size="45" value="xoxb-12345678910-XXXXXXXXXXXXXXXXXXXXXXXX">
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqName":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqName" size="30" value="john.doe">
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqRoom":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqRoom" list="channel">
+            <datalist id="channel">
+                <option value="some-slack-channel">
+                <option value="other-slack-channel">
+            </datalist>
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;" >&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqRawText":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqRawText" size="30" value="mtr XY1 8.8.8.8">
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">}</td>
+        <td style="background-color: #0ecc1b;">,</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;"></td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;"></td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"output":</td>
+        <td style="background-color: lawngreen;">
+            <select name="output">
+                <option value="smtp">"smtp"</option>
+                <option value="slack">"slack"</option>
+            </select>
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should delete the output')">del output</button></td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should add an output')">add output</button></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"sendTo":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="sendTo" list="email">
+            <datalist id="email">
+                <option value="john.doe@email.com">
+                <option value="jane.doe@email.com">
+            </datalist>
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">]</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">}</td>
+        <td style="background-color: #ffcf1e;">,</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: yellow;">"task":</td>
+        <td style="background-color: yellow;"><select name="task">
+            <option value="mtr">"mtr"</option>
+            <option value="ping">"ping"</option>
+            <option value="traceroute">"traceroute"</option>
+        </select></td>
+        <td style="background-color: yellow;">,</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+        <td style="background-color: yellow;">&nbsp;</td>
+        <td style="background-color: yellow;"><button type="button" onclick="alert('Clicking this should delete the task')">del task</button></td>
+        <td style="background-color: yellow;"><button type="button" onclick="alert('Clicking this should add a task')">add task</button></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: yellow;">"target":</td>
+        <td style="background-color: yellow;">
+            <input type="text" name="target" value="8.8.4.4">
+        </td>
+        <td style="background-color: yellow;">,</td>
+        <td style="background-color: yellow;"></td>
+        <tdstyle="background-color: yellow;"></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">"outputs":</td>
+        <td style="background-color: #0ecc1b;">[</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;"></td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">{</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;"></td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"output":</td>
+        <td style="background-color: lawngreen;">
+            <select name="output">
+                <option value="slack">"slack"</option>
+                <option value="smtp">"smtp"</option>
+            </select>
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should delete the output')">del output</button></td>
+        <td style="background-color: lawngreen;"><button type="button" onclick="alert('Clicking this should add an output')">add output</button></td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"botKey":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="botKey" size="45" value="xoxb-12345678910-XXXXXXXXXXXXXXXXXXXXXXXX">
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqName":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqName" size="30" value="john.doe">
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqRoom":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqRoom" list="channel">
+            <datalist id="channel">
+                <option value="some-slack-channel">
+                <option value="other-slack-channel">
+            </datalist>
+        </td>
+        <td style="background-color: lawngreen;">,</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: lawngreen;">"reqRawText":</td>
+        <td style="background-color: lawngreen;">
+            <input type="text" name="reqRawText" size="30" value="mtr XY1 8.8.4.4">
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #0ecc1b;">]</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">&nbsp;</td>
+        <td style="background-color: #ffcf1e;">}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #cbdcff;"></td>
+        <td style="background-color: #ffcf1e;">]</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">&nbsp;</td>
+        <td style="background-color: #cbdcff;">}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td style="background-color: #cbdcff;">}</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+
+<button type="button" onclick="alert('Clicking this should publish to Redis for Chrysus to consume')">Publish to Redis / Send to Chrysus</button>
+
+</body>
+</html>
